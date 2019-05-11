@@ -25,7 +25,7 @@ class Contact extends Component {
     }
 }
 const mapStateToProps = state => {
-    return { count: state };
+    return { count: state.count };
     };
     const mapDispatchToProps = dispatch => {
     return { increment: () => dispatch({type: 'INCREMENT'}), decrement: () => dispatch({type: 'DECREMENT'})
