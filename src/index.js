@@ -3,6 +3,7 @@ import {render} from 'react-dom';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import App from './App.js';
+import Router from './Router'
 
 const reducer = (state = 0, action) => {
 switch(action.type) {
@@ -15,10 +16,10 @@ return state;
 }
 };
 
-const store = createStore(reducer);
+const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 render(
 <Provider store={store}>
-<App />
+<Router />
 </Provider>,
 document.getElementById('root')
 );
