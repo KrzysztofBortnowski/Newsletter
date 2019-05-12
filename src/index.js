@@ -5,13 +5,19 @@ import {createStore} from 'redux';
 import App from './App.js';
 import Router from './Router'
 
+const myState = {
+    count: 0,
+    email: ''
+}
 
-const reducer = (state = {count: 0 }, action) => {
+const reducer = (state = myState, action) => {
 switch(action.type) {
 case 'INCREMENT':
-return state = {count: state.count + 1};
+return state = {...state, count: state.count + 1};
 case 'DECREMENT':
-return state = {count: state.count - 1};
+return state = {...state, count: state.count - 1};
+case 'ADD_EMAIL':
+return state = {...state, email: action.email}
 default:
 return state;
 }
